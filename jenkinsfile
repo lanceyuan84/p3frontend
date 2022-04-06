@@ -5,11 +5,11 @@ pipeline {
         stage('P3 Build') {
             steps {
                 echo 'P3 Building started..'
-                sh 'curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -'
+                //sh 'curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -'
                 echo 'node version is below'
-                sh 'node -v'
+                //sh 'node -v'
                 echo 'npm version is below'
-                sh 'npm install'
+                //sh 'npm install'
             }
         }     
     }
