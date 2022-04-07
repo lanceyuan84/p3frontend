@@ -1,16 +1,28 @@
 pipeline {
     agent any
+    
+    tools  {
+
+        nodejs '16.0.0'
+    }
 
     stages {
-        stage('P3 Build') {
+        stage('Build') {
             steps {
-                echo 'P3 Building started..'
-                //sh 'curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -'
-                echo 'node version is below'
-                //sh 'node -v'
-                echo 'npm version is below'
-                //sh 'npm install'
+                echo 'Building..'
+                sh 'npm install' 
             }
-        }     
+        }
+        stage('Testing') {
+            steps {
+                echo 'Testing..'
+                sh 'npm run build'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying is awaiting'
+            }
+        }
     }
 }
