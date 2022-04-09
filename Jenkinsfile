@@ -26,7 +26,7 @@ pipeline {
                 sh 'pwd'
                 withAWS(credentials: 's3deployment') {
                 sh 'aws s3 ls'
-                sh 'aws s3 ./build/* s3://www.mylab.html'
+                sh 'aws s3 ./build/* s3://www.mylab.click'
                 
                         }
                 
