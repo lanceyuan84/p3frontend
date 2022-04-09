@@ -26,7 +26,7 @@ pipeline {
                 sh 'pwd'
                 withAWS(credentials: 's3deployment') {
                 sh 'aws s3 ls'
-                sh 'aws s3 cp ./build/* --recursive s3://www.mylab.click'
+                sh 'aws s3 cp ./build/*  s3://www.mylab.click' --recursive
                 
                         }
                 
