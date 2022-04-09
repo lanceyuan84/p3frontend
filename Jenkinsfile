@@ -24,9 +24,11 @@ pipeline {
                 //echo 'Deploying is awaiting'
                 echo 'current working directory'
                 sh 'pwd'
-                withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
-                    aws s3 ls
-                    }
+                withAWS(credentials: 's3deployment') {
+                sh 'aws s3 ls'
+                
+                 }
+                
                 
                 }
 
